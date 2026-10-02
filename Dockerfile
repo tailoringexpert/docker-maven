@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source="https://github.com"
 
 RUN apt-get update  && \
     apt-get upgrade -y  && \
-    apt-get install -y --no-install-recommends gnupg  && \
+    apt-get install -y --no-install-recommends gnupg jq && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 
