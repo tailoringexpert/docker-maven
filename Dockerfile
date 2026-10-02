@@ -1,7 +1,12 @@
 FROM maven:3.9-eclipse-temurin-25
 
-LABEL org.opencontainers.image.source2="Hallo"
 LABEL org.opencontainers.image.source="https://github.com"
+
+RUN apt-get update  && \
+    apt-get upgrade -y  && \
+    apt-get install -y --no-install-recommends gnupg  && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
 
 # default changed because image is intended to use as a non root user
 ARG USER_HOME_DIR="/home/maven" 
