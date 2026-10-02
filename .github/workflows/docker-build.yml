@@ -6,7 +6,7 @@ on:
       image_tag:
         description: "Tag"
         required: true
-        default: "3.9-eclipse-latest"
+        default: "3.9-eclipse-2"
 
 permissions:
   packages: write
