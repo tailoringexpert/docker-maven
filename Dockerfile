@@ -1,6 +1,6 @@
 FROM maven:3.9-eclipse-temurin-25
 
-LABEL org.opencontainers.image.source="https://github.com/tailloringexpert/docker-maven"
+LABEL org.opencontainers.image.source="https://github.com"
 
 # default changed because image is intended to use as a non root user
 ARG USER_HOME_DIR="/home/maven" 
