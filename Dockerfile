@@ -7,11 +7,11 @@ RUN apt-get update  && \
     apt-get install -y --no-install-recommends gnupg jq && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-
 # default changed because image is intended to use as a non root user
 ARG USER_HOME_DIR="/home/maven" 
 ENV MAVEN_CONFIG="$USER_HOME_DIR/.m2"
 
+COPY --chmod=755 usr/ /usr/
 RUN git config --system credential.helper 'store --file /var/tmp/.git-credentials'
 
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
